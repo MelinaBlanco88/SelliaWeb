@@ -1,0 +1,61 @@
+import { useState } from "react";
+import { Button } from "react-bootstrap";
+import { SocialIcon } from "react-social-icons";
+const fbMessengerIcon = {
+	icon: "M 32.035156 16.001953 C 22.997779 16.001953 16 22.602816 16 31.521484 C 16 36.187269 17.914544 40.218077 21.037109 43 C 21.573881 43.485158 21.464993 43.769439 21.552734 46.757812 C 21.568219 47.186198 21.796915 47.571732 22.158203 47.798828 C 22.51433 48.025924 22.963213 48.062904 23.355469 47.892578 C 26.767065 46.390649 26.812563 46.270943 27.390625 46.425781 C 37.279611 49.145768 48 42.819496 48 31.521484 C 48 22.602816 41.067372 16.001953 32.035156 16.001953 z M 40.951172 26.777344 C 41.516577 26.721452 42.03114 27.364652 41.662109 27.943359 L 36.955078 35.402344 C 36.593789 35.970082 36.016111 36.356598 35.355469 36.480469 C 34.694827 36.599173 34.013334 36.445552 33.476562 36.042969 L 29.728516 33.234375 C 29.38271 32.976311 28.914163 32.976311 28.568359 33.234375 L 23.509766 37.068359 C 22.8388 37.584485 21.950803 36.774754 22.410156 36.0625 L 27.117188 28.605469 C 27.478475 28.037729 28.056155 27.6441 28.716797 27.525391 C 29.377439 27.40152 30.058931 27.562266 30.595703 27.964844 L 34.34375 30.767578 C 34.684393 31.025642 35.158101 31.025642 35.503906 30.767578 L 40.5625 26.9375 C 40.688306 26.840726 40.820694 26.790242 40.951172 26.777344 z M 0.19140625 64 L 64.191406 64 L 0.19140625 64 z ",
+	mask: "M0,0v64h64V0H0z M 32.035156 16.001953 C 22.997779 16.001953 16 22.602816 16 31.521484 C 16 36.187269 17.914544 40.218077 21.037109 43 C 21.573881 43.485158 21.464993 43.769439 21.552734 46.757812 C 21.568219 47.186198 21.796915 47.571732 22.158203 47.798828 C 22.51433 48.025924 22.963213 48.062904 23.355469 47.892578 C 26.767065 46.390649 26.812563 46.270943 27.390625 46.425781 C 37.279611 49.145768 48 42.819496 48 31.521484 C 48 22.602816 41.067372 16.001953 32.035156 16.001953 z M 40.951172 26.777344 C 41.516577 26.721452 42.03114 27.364652 41.662109 27.943359 L 36.955078 35.402344 C 36.593789 35.970082 36.016111 36.356598 35.355469 36.480469 C 34.694827 36.599173 34.013334 36.445552 33.476562 36.042969 L 29.728516 33.234375 C 29.38271 32.976311 28.914163 32.976311 28.568359 33.234375 L 23.509766 37.068359 C 22.8388 37.584485 21.950803 36.774754 22.410156 36.0625 L 27.117188 28.605469 C 27.478475 28.037729 28.056155 27.6441 28.716797 27.525391 C 29.377439 27.40152 30.058931 27.562266 30.595703 27.964844 L 34.34375 30.767578 C 34.684393 31.025642 35.158101 31.025642 35.503906 30.767578 L 40.5625 26.9375 C 40.688306 26.840726 40.820694 26.790242 40.951172 26.777344 z M 0.19140625 64 L 64.191406 64 L 0.19140625 64 z ",
+	color: "#3B5998",
+};
+
+export const DemoButton = () => {
+	const [hidden, setHidden] = useState(false);
+	const toggleVisibility = () => {
+		setHidden(!hidden);
+	};
+	return (
+		<div id='demo_container'>
+			<div
+				// ${hidden === true ? "animate__fadeInUp" : ""}
+				className={`social-icons animate__animated 
+				
+				`}
+			>
+				<SocialIcon
+					target='_blank'
+					rel='noreferrer'
+					className={`animate__animated  ${
+						hidden === true ? "animate__delay-5s animate__rotateInDownRight" : "animate__rotateOutDownRight"
+					}`}
+					url='https://api.whatsapp.com/send/?phone=523317878856&text&type=phone_number&app_absent=0/'
+					style={{ height: 35, width: 35 }}
+					bgColor='#31DF61'
+				/>
+				<SocialIcon
+					target='_blank'
+					rel='noreferrer'
+					className={`animate__animated  ${
+						hidden === true ? "animate__delay-4s animate__rotateInDownRight" : "animate__rotateOutDownRight"
+					}`}
+					url='https://t.me/selliasoportebot'
+					style={{ height: 35, width: 35 }}
+					bgColor='#2A9DDF'
+				/>
+				<SocialIcon
+					target='_blank'
+					rel='noreferrer'
+					className={`animate__animated  ${
+						hidden === true ? "animate__delay-2s animate__rotateInDownRight" : "animate__rotateOutDownRight"
+					}`}
+					defaultSVG={fbMessengerIcon}
+					network='sharethis'
+					url='https://www.facebook.com/sellia.business'
+					style={{ height: 35, width: 35 }}
+					// bgColor='#1771E6'
+				/>
+			</div>
+			<Button onClick={toggleVisibility} id='demo_button' className='fw-700'>
+				Solicitar una Demo
+			</Button>
+		</div>
+	);
+};

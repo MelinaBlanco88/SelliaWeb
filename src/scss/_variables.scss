@@ -1,0 +1,22 @@
+// font
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+
+:root{
+    // Font
+    --font-inter: 'Inter' , sans-serif;
+
+    // Colors
+    // Primary
+    --blue: rgb(34, 85, 255);
+
+    $primary-color: rgb(34, 85, 255);
+    // Secondary
+    // #021e51
+    --dark-blue: rgb(2, 30, 81);
+    // Extras
+    --light-blue: rgb(226, 240, 255);
+    --almost-white: rgb(232, 232, 232);
+    --light-grey: rgb(98, 98, 98);
+    --green-light: rgb(40, 210, 150);
+    --bone: rgba(217, 217, 217, 0.25);
+}
